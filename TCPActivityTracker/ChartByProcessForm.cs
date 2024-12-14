@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
@@ -49,16 +50,29 @@ namespace NetworkConnections_Extractor
                     remotePortNumber = Convert.ToInt32(selectedRemotePort);
                 }
 
-                var fileTcpConnections = CsvHelperUtility.Instance.GetConnectionLogs();
-                if (fileTcpConnections != null && fileTcpConnections.Count > 0)
+                var connectionLogs = CsvHelperUtility.Instance.GetConnectionLogs();
+                if (connectionLogs != null && connectionLogs.Count > 0)
                 {
-                    foreach (var fileTcpConnection in fileTcpConnections)
+                    foreach (var connectionLog in connectionLogs)
                     {
-                        var tcpConnections = fileTcpConnection.Connections;
+                        var tcpConnections = connectionLog.Connections;
                         if (tcpConnections != null)
                         {
-                            int connectionCount;
-                            if (remotePortNumber == -1)
+                            int connectionCount = default;
+
+                            if (string.IsNullOrWhiteSpace(selectedProcess) && remotePortNumber == -1)
+                            {
+                                // Use case 1
+                                CsvHelperUtility.Instance.GetAllActivePortCount(tcpConnections, out var allActivePortCount);
+                                connectionCount = allActivePortCount;
+                            }
+                            else if (string.IsNullOrWhiteSpace(selectedProcess) && remotePortNumber > -1)
+                            {
+                                // Use case 2
+                                MessageBox.Show("Process selection is mandatory when Port number is selected", "Select Process", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                return;
+                            }
+                            else if (!string.IsNullOrWhiteSpace(selectedProcess) && remotePortNumber == -1)
                             {
                                 connectionCount = tcpConnections.Where(x => x.ExtractedProcessName == selectedProcess).Count();
                             }
@@ -67,14 +81,15 @@ namespace NetworkConnections_Extractor
                                 connectionCount = tcpConnections.Where(x => x.ExtractedProcessName == selectedProcess && x.RemotePort == remotePortNumber).Count();
                             }
 
-                            timelyConnectionCount.Add(fileTcpConnection.DateTime.ToString(), connectionCount);
+                            timelyConnectionCount.Add(connectionLog.DateTime.ToString(), connectionCount);
                         }
                     }
                 }
 
                 var processName = GetProcessNameByRemotePort(remotePortNumber);
-                var portNumerText = remotePortNumber == -1 ? "all ports" : $"selected port number {remotePortNumber}";
-                InformationLabel.Text = $"Graph generated for the selected process name - {selectedProcess} and {portNumerText}";
+                var portNumerText = remotePortNumber == -1 ? "all the ports" : $"the selected port number {remotePortNumber}";
+                var selectedProcessNameText = string.IsNullOrWhiteSpace(selectedProcess) ? " all the prcess(es)" : $"the selected process name - {selectedProcess}";
+                InformationLabel.Text = $"Graph generated for {selectedProcessNameText} and for {portNumerText}";
                 GenerateChart(timelyConnectionCount, processName);
             }
             catch (Exception ex)
