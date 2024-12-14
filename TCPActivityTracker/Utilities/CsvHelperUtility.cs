@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-using Newtonsoft.Json.Linq;
 
 namespace NetworkConnections_Extractor
 {
@@ -28,14 +27,14 @@ namespace NetworkConnections_Extractor
             }
         }
 
-        List<FileByTcpConnections> fileTcpConnections;
+        List<ConnectionLog> connectionLogs;
 
-        public List<FileByTcpConnections> ReadCsvFiles(string[] filePaths)
+        public List<ConnectionLog> ReadCsvFiles(string[] filePaths)
         {
 
             try
             {
-                fileTcpConnections = new List<FileByTcpConnections>();
+                connectionLogs = new List<ConnectionLog>();
                 foreach (string filePath in filePaths)
                 {
                     using (StreamReader reader = new StreamReader(filePath))
@@ -43,9 +42,9 @@ namespace NetworkConnections_Extractor
                         string line;
                         bool isHeader = true;
                         var tcpConnections = new List<TcpConnection>();
-                        var fileTcpConnection = new FileByTcpConnections();
-                        fileTcpConnection.FileName = ExtractFileName(filePath, out var parsedDateTime);
-                        fileTcpConnection.DateTime = parsedDateTime;
+                        var connectionLog = new ConnectionLog();
+                        connectionLog.FileName = ExtractFileName(filePath, out var parsedDateTime);
+                        connectionLog.DateTime = parsedDateTime;
 
                         while ((line = reader.ReadLine()) != null)
                         {
@@ -85,8 +84,8 @@ namespace NetworkConnections_Extractor
                             }
                         }
 
-                        fileTcpConnection.Connections = tcpConnections;
-                        fileTcpConnections.Add(fileTcpConnection);
+                        connectionLog.Connections = tcpConnections;
+                        connectionLogs.Add(connectionLog);
                     }
                 }
             }
@@ -95,7 +94,16 @@ namespace NetworkConnections_Extractor
                 MessageBox.Show($"{ex.Message} {ex.StackTrace}");
             }
 
-            return fileTcpConnections;
+            return connectionLogs;
+        }
+
+        public void GetSelectedPortTotalCount(IEnumerable<TcpConnection> tcpConnections, int remotePortNumber, out int remotePortCount)
+        {
+            remotePortCount = default;
+            if (tcpConnections != null)
+            {
+                remotePortCount = tcpConnections.Where(x => x.RemotePort == remotePortNumber).Count();
+            }
         }
 
         public void GetConsulRMQPortCount(IEnumerable<TcpConnection> tcpConnections, out int consulPortCount, out int rmqPortCount)
@@ -146,26 +154,26 @@ namespace NetworkConnections_Extractor
             return fileName;
         }
 
-        public List<FileByTcpConnections> GetTcpConnectionsList()
+        public List<ConnectionLog> GetConnectionLogs()
         {
-            return fileTcpConnections;
+            return connectionLogs;
         }
 
         public List<string> GetTotalUniqueProcessNamesPorts(out List<int> allPorts)
         {
-            var fileTcpConnections = GetTcpConnectionsList();
-            var allConnections = fileTcpConnections.SelectMany(x => x.Connections);
+            var connectionLogs = GetConnectionLogs();
+            var allConnections = connectionLogs.SelectMany(x => x.Connections);
             var uniqueProcessName = ExtractUniqueProcessNames(allConnections);
-            
+
             allPorts = allConnections.Select(x => x.RemotePort).Distinct().OrderBy(x => x).ToList();
             allPorts.Insert(0, -1);
 
             return uniqueProcessName;
         }
 
-        public List<string> GetUniqueProcessNamesBySelectedFile(string selectedFileName)
+        public List<string> GetUniqueProcessNamesBySelectedLogFile(string selectedLogFile)
         {
-            var tcpConnections = GetTcpConnectionsByFileName(selectedFileName);
+            var tcpConnections = GetTcpConnectionsFromLogFile(selectedLogFile);
             if (tcpConnections != null)
             {
                 return ExtractUniqueProcessNames(tcpConnections);
@@ -174,15 +182,15 @@ namespace NetworkConnections_Extractor
             return null;
         }
 
-        private List<string> ExtractUniqueProcessNames(IEnumerable<TcpConnection> tcpConnections) 
+        private List<string> ExtractUniqueProcessNames(IEnumerable<TcpConnection> tcpConnections)
         {
             return tcpConnections.Select(x => x.ExtractedProcessName).Distinct().OrderBy(x => x).ToList();
         }
 
-        public IEnumerable<TcpConnection> GetTcpConnectionsByFileName(string selectedFileName)
+        public IEnumerable<TcpConnection> GetTcpConnectionsFromLogFile(string selectedLogFile)
         {
-            var fileTcpConnections = GetTcpConnectionsList();
-            var tcpConnections = fileTcpConnections.Where(x => x.FileName == selectedFileName).SelectMany(x => x.Connections);
+            var connectionLogs = GetConnectionLogs();
+            var tcpConnections = connectionLogs.Where(x => x.FileName == selectedLogFile).SelectMany(x => x.Connections);
             return tcpConnections;
         }
     }

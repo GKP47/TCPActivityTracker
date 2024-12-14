@@ -32,13 +32,13 @@
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.InformationLabel = new System.Windows.Forms.Label();
             this.GenerateChartButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.AllPortComboBox = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.AllProcessComboBox = new System.Windows.Forms.ComboBox();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.InformationLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -68,6 +68,16 @@
             this.splitContainer1.Size = new System.Drawing.Size(1493, 711);
             this.splitContainer1.SplitterDistance = 97;
             this.splitContainer1.TabIndex = 0;
+            // 
+            // InformationLabel
+            // 
+            this.InformationLabel.AutoSize = true;
+            this.InformationLabel.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InformationLabel.Location = new System.Drawing.Point(12, 65);
+            this.InformationLabel.Name = "InformationLabel";
+            this.InformationLabel.Size = new System.Drawing.Size(367, 18);
+            this.InformationLabel.TabIndex = 27;
+            this.InformationLabel.Text = "Graph generated for $selectedProcessName $PortNumber";
             // 
             // GenerateChartButton
             // 
@@ -134,16 +144,6 @@
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
             // 
-            // InformationLabel
-            // 
-            this.InformationLabel.AutoSize = true;
-            this.InformationLabel.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InformationLabel.Location = new System.Drawing.Point(12, 65);
-            this.InformationLabel.Name = "InformationLabel";
-            this.InformationLabel.Size = new System.Drawing.Size(367, 18);
-            this.InformationLabel.TabIndex = 27;
-            this.InformationLabel.Text = "Graph generated for $selectedProcessName $PortNumber";
-            // 
             // ChartByProcessForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -153,6 +153,7 @@
             this.Name = "ChartByProcessForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ChartByProcessForm";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.ChartByProcessForm_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();

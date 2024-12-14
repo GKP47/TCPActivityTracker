@@ -242,6 +242,7 @@
             this.Name = "ConsulLogExtractor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ConsulLogExtractor";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ValueDataGridView)).EndInit();
             this.ResumeLayout(false);

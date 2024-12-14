@@ -277,7 +277,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(55, 705);
+            this.label10.Location = new System.Drawing.Point(57, 714);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(356, 18);
             this.label10.TabIndex = 23;
@@ -285,6 +285,7 @@
             // 
             // GenerateChartButton
             // 
+            this.GenerateChartButton.Enabled = false;
             this.GenerateChartButton.Location = new System.Drawing.Point(421, 376);
             this.GenerateChartButton.Name = "GenerateChartButton";
             this.GenerateChartButton.Size = new System.Drawing.Size(101, 23);
@@ -337,7 +338,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(55, 749);
+            this.label12.Location = new System.Drawing.Point(56, 749);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(239, 18);
             this.label12.TabIndex = 30;

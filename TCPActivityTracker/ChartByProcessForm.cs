@@ -53,7 +53,7 @@ namespace NetworkConnections_Extractor
                     remotePortNumber = Convert.ToInt32(selectedRemotePort);
                 }
 
-                var fileTcpConnections = CsvHelperUtility.Instance.GetTcpConnectionsList();
+                var fileTcpConnections = CsvHelperUtility.Instance.GetConnectionLogs();
                 if (fileTcpConnections != null && fileTcpConnections.Count > 0)
                 {
                     foreach (var fileTcpConnection in fileTcpConnections)

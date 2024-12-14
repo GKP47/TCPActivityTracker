@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NetworkConnections_Extractor
 {
-    public class FileByTcpConnections
+    /// <summary>
+    /// Represents each log (.csv) file generated for at regular interval
+    /// </summary>
+    public class ConnectionLog
     {
         public string FileName { get; set; }
 
@@ -14,7 +14,7 @@ namespace NetworkConnections_Extractor
 
         public List<TcpConnection> Connections { get; set; }
 
-        public FileByTcpConnections()
+        public ConnectionLog()
         {
             Connections = new List<TcpConnection>();
         }

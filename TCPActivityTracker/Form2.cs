@@ -66,7 +66,7 @@ namespace NetworkConnections_Extractor
             consulPortCountList = new Dictionary<string, int>();
             rmqPortCountList = new Dictionary<string, int>();
 
-            var fileTcpConnections = CsvHelperUtility.Instance.GetTcpConnectionsList();
+            var fileTcpConnections = CsvHelperUtility.Instance.GetConnectionLogs();
             if (fileTcpConnections != null && fileTcpConnections.Count > 0)
             {
                 foreach (var fileTcpConnection in fileTcpConnections)
@@ -74,7 +74,9 @@ namespace NetworkConnections_Extractor
                     var tcpConnections = fileTcpConnection.Connections;
                     if (tcpConnections != null)
                     {
-                        CsvHelperUtility.Instance.GetConsulRMQPortCount(tcpConnections, out var consulPortCount, out var rmqPortCount);
+                        CsvHelperUtility.Instance.GetSelectedPortTotalCount(tcpConnections, 8500, out var consulPortCount);
+                        CsvHelperUtility.Instance.GetSelectedPortTotalCount(tcpConnections, 8500, out var rmqPortCount);
+
                         consulPortCountList.Add(fileTcpConnection.DateTime.ToString(), consulPortCount);
                         rmqPortCountList.Add(fileTcpConnection.DateTime.ToString(), rmqPortCount);
                     }
