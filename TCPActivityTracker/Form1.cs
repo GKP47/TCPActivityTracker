@@ -164,7 +164,7 @@ namespace NetworkConnections_Extractor
 
         private void SetToolTip()
         {
-            SetToolTip(GenerateDataForSelectedProcessButton, "This button generates data for the selected process and remote port number from all the files loaded in the file name list box.");
+            SetToolTip(GenerateDataForSelectedProcessButton, "Generate detailed data for the selected process and port across all monitoring intervals.");
             SetToolTip(ConsulPortCountLabel, "Total active Port connection count to Consul Server (:8500) for the selected file in the file name list box");
             SetToolTip(RMQPortCountLabel, "Total active Port connection count to RMQ Server (:5672) for the selected file in the file name list box");
             SetToolTip(TotalAllPortCountLabel, "Total active Port connection count for the selected file in the file name list box");

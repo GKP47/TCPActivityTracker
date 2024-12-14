@@ -310,7 +310,7 @@
             this.GenerateDataForSelectedProcessButton.Name = "GenerateDataForSelectedProcessButton";
             this.GenerateDataForSelectedProcessButton.Size = new System.Drawing.Size(207, 23);
             this.GenerateDataForSelectedProcessButton.TabIndex = 27;
-            this.GenerateDataForSelectedProcessButton.Text = "Generate Data For Selected Process";
+            this.GenerateDataForSelectedProcessButton.Text = "Show Connection History";
             this.GenerateDataForSelectedProcessButton.UseVisualStyleBackColor = true;
             this.GenerateDataForSelectedProcessButton.Click += new System.EventHandler(this.GenerateDataForSelectedProcessButton_Click);
             // 
