@@ -1,0 +1,128 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\OneDrive - Philips\\AMD\\Examples\\NetworkConnections_Extractor\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E6185A45-8C39-4911-9715-5D0A91D47E3A}|NetworkConnections_Extractor\\NetworkConnections_Extractor.csproj|e:\\onedrive - philips\\amd\\examples\\networkconnections_extractor\\networkconnections_extractor\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6185A45-8C39-4911-9715-5D0A91D47E3A}|NetworkConnections_Extractor\\NetworkConnections_Extractor.csproj|solutionrelative:networkconnections_extractor\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6185A45-8C39-4911-9715-5D0A91D47E3A}|NetworkConnections_Extractor\\NetworkConnections_Extractor.csproj|e:\\onedrive - philips\\amd\\examples\\networkconnections_extractor\\networkconnections_extractor\\utilities\\csvhelperutility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6185A45-8C39-4911-9715-5D0A91D47E3A}|NetworkConnections_Extractor\\NetworkConnections_Extractor.csproj|solutionrelative:networkconnections_extractor\\utilities\\csvhelperutility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6185A45-8C39-4911-9715-5D0A91D47E3A}|NetworkConnections_Extractor\\NetworkConnections_Extractor.csproj|e:\\onedrive - philips\\amd\\examples\\networkconnections_extractor\\networkconnections_extractor\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6185A45-8C39-4911-9715-5D0A91D47E3A}|NetworkConnections_Extractor\\NetworkConnections_Extractor.csproj|solutionrelative:networkconnections_extractor\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6185A45-8C39-4911-9715-5D0A91D47E3A}|NetworkConnections_Extractor\\NetworkConnections_Extractor.csproj|e:\\onedrive - philips\\amd\\examples\\networkconnections_extractor\\networkconnections_extractor\\chartbyprocessform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6185A45-8C39-4911-9715-5D0A91D47E3A}|NetworkConnections_Extractor\\NetworkConnections_Extractor.csproj|solutionrelative:networkconnections_extractor\\chartbyprocessform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6185A45-8C39-4911-9715-5D0A91D47E3A}|NetworkConnections_Extractor\\NetworkConnections_Extractor.csproj|e:\\onedrive - philips\\amd\\examples\\networkconnections_extractor\\networkconnections_extractor\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E6185A45-8C39-4911-9715-5D0A91D47E3A}|NetworkConnections_Extractor\\NetworkConnections_Extractor.csproj|solutionrelative:networkconnections_extractor\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{8294f124-07d1-574c-bf4d-1c4a34e31c86}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{a80febb4-e7e0-4147-b476-21aaf2453969}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "E:\\OneDrive - Philips\\AMD\\Examples\\NetworkConnections_Extractor\\NetworkConnections_Extractor\\Form1.cs",
+              "RelativeDocumentMoniker": "NetworkConnections_Extractor\\Form1.cs",
+              "ToolTip": "E:\\OneDrive - Philips\\AMD\\Examples\\NetworkConnections_Extractor\\NetworkConnections_Extractor\\Form1.cs [Design]",
+              "RelativeToolTip": "NetworkConnections_Extractor\\Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-13T17:52:21.913Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "E:\\OneDrive - Philips\\AMD\\Examples\\NetworkConnections_Extractor\\NetworkConnections_Extractor\\Form1.cs",
+              "RelativeDocumentMoniker": "NetworkConnections_Extractor\\Form1.cs",
+              "ToolTip": "E:\\OneDrive - Philips\\AMD\\Examples\\NetworkConnections_Extractor\\NetworkConnections_Extractor\\Form1.cs",
+              "RelativeToolTip": "NetworkConnections_Extractor\\Form1.cs",
+              "ViewState": "AQIAAH8BAAAAAAAAAAAUwAgBAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-13T17:52:23.857Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CsvHelperUtility.cs",
+              "DocumentMoniker": "E:\\OneDrive - Philips\\AMD\\Examples\\NetworkConnections_Extractor\\NetworkConnections_Extractor\\Utilities\\CsvHelperUtility.cs",
+              "RelativeDocumentMoniker": "NetworkConnections_Extractor\\Utilities\\CsvHelperUtility.cs",
+              "ToolTip": "E:\\OneDrive - Philips\\AMD\\Examples\\NetworkConnections_Extractor\\NetworkConnections_Extractor\\Utilities\\CsvHelperUtility.cs",
+              "RelativeToolTip": "NetworkConnections_Extractor\\Utilities\\CsvHelperUtility.cs",
+              "ViewState": "AQIAAKQAAAAAAAAAAIAwwLUAAABFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-13T17:54:52.725Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ChartByProcessForm.cs",
+              "DocumentMoniker": "E:\\OneDrive - Philips\\AMD\\Examples\\NetworkConnections_Extractor\\NetworkConnections_Extractor\\ChartByProcessForm.cs",
+              "RelativeDocumentMoniker": "NetworkConnections_Extractor\\ChartByProcessForm.cs",
+              "ToolTip": "E:\\OneDrive - Philips\\AMD\\Examples\\NetworkConnections_Extractor\\NetworkConnections_Extractor\\ChartByProcessForm.cs",
+              "RelativeToolTip": "NetworkConnections_Extractor\\ChartByProcessForm.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAA6wBgAAABiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-13T18:01:26.501Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Form2.cs",
+              "DocumentMoniker": "E:\\OneDrive - Philips\\AMD\\Examples\\NetworkConnections_Extractor\\NetworkConnections_Extractor\\Form2.cs",
+              "RelativeDocumentMoniker": "NetworkConnections_Extractor\\Form2.cs",
+              "ToolTip": "E:\\OneDrive - Philips\\AMD\\Examples\\NetworkConnections_Extractor\\NetworkConnections_Extractor\\Form2.cs",
+              "RelativeToolTip": "NetworkConnections_Extractor\\Form2.cs",
+              "ViewState": "AQIAADoAAAAAAAAAAAAYwEwAAABHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-13T18:09:48.677Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

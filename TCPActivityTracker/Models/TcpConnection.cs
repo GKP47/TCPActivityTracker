@@ -1,0 +1,29 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace NetworkConnections_Extractor
+{
+    public class TcpConnection
+    {
+        public DateTime Timestamp { get; set; }
+        public string LocalAddress { get; set; }
+        public int LocalPort { get; set; }
+        public string RemoteAddress { get; set; }
+        public int RemotePort { get; set; }
+        public string State { get; set; }
+        public int ProcessId { get; set; }
+        public string ProcessName { get; set; }
+        public int ConnectionCount { get; set; }
+
+        public string ExtractedProcessName
+        {
+            get
+            {
+                return ProcessName.Replace("\\", "").Replace("\"", "");
+            }
+        }
+    }
+}
