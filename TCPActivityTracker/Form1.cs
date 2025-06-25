@@ -288,12 +288,13 @@ namespace NetworkConnections_Extractor
             var tcpConnections = CsvHelperUtility.Instance.GetTcpConnectionsFromLogFile(selectedLogFile);
             if (tcpConnections != null)
             {
-                var groupBy = tcpConnections.Where(x => x.RemotePort == selectedRemotePort).GroupBy(x => new { x.RemotePort, x.ExtractedProcessName })
+                var groupBy = tcpConnections.Where(x => x.RemotePort == selectedRemotePort).GroupBy(x => new { x.RemotePort, x.ExtractedProcessName,x.AppPoolName })
                     .Select(group => new
                     {
                         ProcessName = group.Key.ExtractedProcessName,
                         group.Key.RemotePort,
-                        TotalConnectionsCount = group.Count()
+                        TotalConnectionsCount = group.Count(),
+                        group.Key.AppPoolName,
                     }).OrderByDescending(result => result.TotalConnectionsCount).ToList();
 
                 dataGridView1.DataSource = null;
@@ -311,12 +312,13 @@ namespace NetworkConnections_Extractor
         {
             if (sortByDateTime)
             {
-                var groupBy = tcpConnectionsByProcess.GroupBy(x => new { x.RemotePort, x.Timestamp }).Select(group =>
+               var groupBy = tcpConnectionsByProcess.GroupBy(x => new { x.RemotePort, x.Timestamp, x.AppPoolName }).Select(group =>
                new
                {
                    DateTime = group.Key.Timestamp,
                    ProcessName = group.FirstOrDefault(x => x.ExtractedProcessName == processName).ExtractedProcessName,
                    RemotePort = group.Key,
+                   group.Key.AppPoolName,
                    TotalConnectionsCount = group.Count()
                }).OrderBy(result => result.DateTime).ToList();
 
@@ -324,12 +326,14 @@ namespace NetworkConnections_Extractor
             }
             else
             {
-                var groupBy = tcpConnectionsByProcess.GroupBy(x => new { x.RemotePort, x.Timestamp }).Select(group =>
+               
+                var groupBy = tcpConnectionsByProcess.GroupBy(x => new { x.RemotePort, x.Timestamp,x.AppPoolName }).Select(group =>
                 new
                 {
                     DateTime = group.Key.Timestamp,
                     ProcessName = group.FirstOrDefault(x => x.ExtractedProcessName == processName).ExtractedProcessName,
                     RemotePort = group.Key,
+                    group.Key.AppPoolName,
                     TotalConnectionsCount = group.Count()
                 }).OrderByDescending(result => result.TotalConnectionsCount).ToList();
 
