@@ -73,7 +73,8 @@ namespace NetworkConnections_Extractor
                                         RemotePort = int.Parse(remotePortNumber),
                                         State = values[4],
                                         ProcessId = int.Parse(processIdNumber),
-                                        ProcessName = values[6]
+                                        ProcessName = values[6],
+                                        AppPoolName = values.Length > 7 ? values[7] : string.Empty // Check if values[7] exists
                                     };
                                     tcpConnections.Add(connection);
                                 }

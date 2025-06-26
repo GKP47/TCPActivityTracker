@@ -16,6 +16,7 @@ namespace NetworkConnections_Extractor
         public int ProcessId { get; set; }
         public string ProcessName { get; set; }
         public int ConnectionCount { get; set; }
+        public string AppPoolName { get; set; }
 
         public string ExtractedProcessName
         {
